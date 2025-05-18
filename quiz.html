@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioBuddy Quiz | Test Your Knowledge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BioBuddy Quiz</h1>
+        <a href="index.html" class="home-btn">Back to Home</a>
+    </header>
+    
+    <main>
+        <section class="quiz-container">
+            <h2>How much do you know about the human body?</h2>
+            <p>Answer these 5 questions to find out!</p>
+            
+            <div id="quiz">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+            
+            <button id="submit-btn">Check Answers</button>
+            <button id="try-again-btn" style="display:none;">Try Again</button>
+            
+            <div id="results" style="display:none;">
+                <h3>Your Results:</h3>
+                <p id="score-message"></p>
+                <p id="result-message"></p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 BioMedBuddy - Learning made fun!</p>
+    </footer>
+    
+    <script src="quiz.js"></script>
+</body>
+</html>
