@@ -1,41 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioBuddy Quiz | Test Your Knowledge</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>BioBuddy Quiz</h1>
-        <a href="index.html" class="home-btn">Back to Home</a>
-    </header>
-    
-    <main>
-        <section class="quiz-container">
-            <h2>How much do you know about the human body?</h2>
-            <p>Answer these 5 questions to find out!</p>
-            
-            <div id="quiz">
-                <!-- Questions will be inserted here by JavaScript -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BioBuddy Quiz | Test Your Knowledge</title>
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>BioBuddy Quiz</h1>
+            <a href="index.html" class="home-btn">Back to Home</a>
+        </header>
+        
+        <main>
+            <section class="quiz-container">
+                <h2>How much do you know about the human body?</h2>
+                <p>Answer these 5 questions to find out!</p>
+                
+                <div id="quiz">
+                    <!-- Questions will be inserted here by JavaScript -->
+                </div>
+                
+                <button id="submit-btn">Check Answers</button>
+                <button id="try-again-btn" style="display:none;">Try Again</button>
+                
+                <div id="results" style="display:none;">
+                    <h3>Your Results:</h3>
+                    <p id="score-message"></p>
+                    <p id="result-message"></p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Explore BioBuddy</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="brain.html">The Brain</a></li>
+                        <li><a href="heart.html">The Heart</a></li>
+                        <li><a href="muscles-bones.html">Muscles & Bones</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="about.html">About Us</a></li> <!-- New link -->
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Learning Resources</h3>
+                    <ul>
+                        <li><a href="#">Fun Facts</a></li>
+                        <li><a href="#">Printable Worksheets</a></li>
+                        <li><a href="#">Science Videos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/kaliphile-papiyana-b84985264/" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/Khalips" target="_blank" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61558758694403" target="_blank" aria-label="Facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@khaliphilepapiyana9225" target="_blank" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://wa.me/+27843528401" target="_blank" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    <p>Email: khaliphilepapiyana7@gmail.com</p>
+                </div>
             </div>
             
-            <button id="submit-btn">Check Answers</button>
-            <button id="try-again-btn" style="display:none;">Try Again</button>
-            
-            <div id="results" style="display:none;">
-                <h3>Your Results:</h3>
-                <p id="score-message"></p>
-                <p id="result-message"></p>
+            <div class="footer-bottom">
+                <p>© 2025 BioMedBuddy - Learning made fun! </p>
             </div>
-        </section>
-    </main>
-    
-    <footer>
-        <p>© 2025 BioMedBuddy - Learning made fun!</p>
-    </footer>
-    
-    <script src="quiz.js"></script>
-</body>
+        </footer>
+        
+        <script src="quiz.js"></script>
+    </body>
 </html>

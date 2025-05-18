@@ -1,46 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Amazing Brain | BioMedBuddy</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>The Amazing Brain</h1>
-        <a href="index.html" class="home-btn">Back to Home</a>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Amazing Brain | BioMedBuddy</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>The Amazing Brain</h1>
+            <a href="index.html" class="home-btn">Back to Home</a>
+        </header>
     
-    <main>
-        <section class="content">
-            <div class="text-section">
-                <h2>Your Body's Control Center</h2>
-                <p>The brain is like a supercomputer that controls everything you do - from thinking and learning to moving and feeling!</p>
+        <main>
+            <section class="content">
+                <div class="text-section">
+                    <h2>Your Body's Control Center</h2>
+                    <p>The brain is like a supercomputer that controls everything you do - from thinking and learning to moving and feeling!</p>
+                    
+                    <div class="fun-fact">
+                        <img src="idea.png" alt="Fun Fact" class="fun-fact-icon">
+                        <p>Fun Fact: Your brain has about 100 billion neurons - that's more than all the stars in the Milky Way galaxy!</p>
+                    </div>
+                </div>
                 
-                <div class="fun-fact">
-                    <img src="idea.png" alt="Fun Fact" class="fun-fact-icon">
-                    <p>Fun Fact: Your brain has about 100 billion neurons - that's more than all the stars in the Milky Way galaxy!</p>
+                <div class="interactive-section">
+                    <h3>Hover over the brain parts to learn more:</h3>
+                    <div class="brain-diagram">
+                        <img src="images/brain-diagram.png" alt="Brain Diagram" id="brain-image">
+                        <div class="brain-part cerebrum" onmouseover="showPartInfo('cerebrum')" onmouseout="hidePartInfo()"></div>
+                        <div class="brain-part cerebellum" onmouseover="showPartInfo('cerebellum')" onmouseout="hidePartInfo()"></div>
+                        <div class="brain-part brainstem" onmouseover="showPartInfo('brainstem')" onmouseout="hidePartInfo()"></div>
+                    </div>
+                    <div id="part-info" class="part-info"></div>
+                </div>
+            </section>
+        </main>
+    
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Explore BioBuddy</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="brain.html">The Brain</a></li>
+                        <li><a href="heart.html">The Heart</a></li>
+                        <li><a href="muscles-bones.html">Muscles & Bones</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="about.html">About Us</a></li> <!-- New link -->
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Learning Resources</h3>
+                    <ul>
+                        <li><a href="#">Fun Facts</a></li>
+                        <li><a href="#">Printable Worksheets</a></li>
+                        <li><a href="#">Science Videos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/kaliphile-papiyana-b84985264/" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/Khalips" target="_blank" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61558758694403" target="_blank" aria-label="Facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@khaliphilepapiyana9225" target="_blank" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://wa.me/+27843528401" target="_blank" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    <p>Email: khaliphilepapiyana7@gmail.com</p>
                 </div>
             </div>
             
-            <div class="interactive-section">
-                <h3>Hover over the brain parts to learn more:</h3>
-                <div class="brain-diagram">
-                    <img src="images/brain-diagram.png" alt="Brain Diagram" id="brain-image">
-                    <div class="brain-part cerebrum" onmouseover="showPartInfo('cerebrum')" onmouseout="hidePartInfo()"></div>
-                    <div class="brain-part cerebellum" onmouseover="showPartInfo('cerebellum')" onmouseout="hidePartInfo()"></div>
-                    <div class="brain-part brainstem" onmouseover="showPartInfo('brainstem')" onmouseout="hidePartInfo()"></div>
-                </div>
-                <div id="part-info" class="part-info"></div>
+            <div class="footer-bottom">
+                <p>© 2025 BioMedBuddy - Learning made fun! </p>
             </div>
-        </section>
-    </main>
+        </footer>
     
-    <footer>
-        <p>© 2025 BioMedBuddy - Learning made fun!</p>
-    </footer>
-    
-    <script src="brain.js"></script>
-</body>
+        <script src="brain.js"></script>
+    </body>
 </html>

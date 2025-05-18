@@ -1,55 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muscles & Bones | BioBuddy</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Muscles & Bones</h1>
-        <a href="index.html" class="home-btn">Back to Home</a>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Muscles & Bones | BioBuddy</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Muscles & Bones</h1>
+            <a href="index.html" class="home-btn">Back to Home</a>
+        </header>
     
-    <main>
-        <section class="content">
-            <div class="text-section">
-                <h2>Your Body's Framework and Movers</h2>
-                <p>Bones give your body structure and support, while muscles help you move around!</p>
+        <main>
+            <section class="content">
+                <div class="text-section">
+                    <h2>Your Body's Framework and Movers</h2>
+                    <p>Bones give your body structure and support, while muscles help you move around!</p>
+                    
+                    <div class="fun-fact">
+                        <img src="idea.png" alt="Fun Fact" class="fun-fact-icon">
+                        <p>Fun Fact: The smallest bone in your body is in your ear - it's called the stirrup and it's smaller than a grain of rice!</p>
+                    </div>
+                </div>
                 
-                <div class="fun-fact">
-                    <img src="idea.png" alt="Fun Fact" class="fun-fact-icon">
-                    <p>Fun Fact: The smallest bone in your body is in your ear - it's called the stirrup and it's smaller than a grain of rice!</p>
+                <div class="interactive-section">
+                    <h3>Explore the Skeleton:</h3>
+                    <div class="skeleton-diagram">
+                        <img src="images/skeleton.png" alt="Human Skeleton" id="skeleton-image">
+                        <!-- Clickable areas would be added here -->
+                    </div>
+                    
+                    <div class="muscle-facts">
+                        <h3>Muscle Facts:</h3>
+                        <div class="fact-card" onclick="showFact('strongest')">
+                            <h4>Strongest Muscle</h4>
+                            <p>The masseter (jaw muscle) is the strongest based on weight.</p>
+                        </div>
+                        <div class="fact-card" onclick="showFact('biggest')">
+                            <h4>Biggest Muscle</h4>
+                            <p>The gluteus maximus (buttock muscle) is the largest.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Explore BioBuddy</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="brain.html">The Brain</a></li>
+                        <li><a href="heart.html">The Heart</a></li>
+                        <li><a href="muscles-bones.html">Muscles & Bones</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="about.html">About Us</a></li> <!-- New link -->
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Learning Resources</h3>
+                    <ul>
+                        <li><a href="#">Fun Facts</a></li>
+                        <li><a href="#">Printable Worksheets</a></li>
+                        <li><a href="#">Science Videos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/kaliphile-papiyana-b84985264/" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/Khalips" target="_blank" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61558758694403" target="_blank" aria-label="Facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@khaliphilepapiyana9225" target="_blank" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://wa.me/+27843528401" target="_blank" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    <p>Email: khaliphilepapiyana7@gmail.com</p>
                 </div>
             </div>
             
-            <div class="interactive-section">
-                <h3>Explore the Skeleton:</h3>
-                <div class="skeleton-diagram">
-                    <img src="images/skeleton.png" alt="Human Skeleton" id="skeleton-image">
-                    <!-- Clickable areas would be added here -->
-                </div>
-                
-                <div class="muscle-facts">
-                    <h3>Muscle Facts:</h3>
-                    <div class="fact-card" onclick="showFact('strongest')">
-                        <h4>Strongest Muscle</h4>
-                        <p>The masseter (jaw muscle) is the strongest based on weight.</p>
-                    </div>
-                    <div class="fact-card" onclick="showFact('biggest')">
-                        <h4>Biggest Muscle</h4>
-                        <p>The gluteus maximus (buttock muscle) is the largest.</p>
-                    </div>
-                </div>
+            <div class="footer-bottom">
+                <p>© 2025 BioMedBuddy - Learning made fun! </p>
             </div>
-        </section>
-    </main>
+        </footer>
     
-    <footer>
-        <p>© 2023 BioBuddy - Learning made fun!</p>
-    </footer>
-    
-    <script src="muscles.js"></script>
-</body>
+        <script src="muscles.js"></script>
+    </body>
 </html>
