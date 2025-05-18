@@ -38,11 +38,14 @@
                     <h3>Hover over the brain parts to learn more:</h3>
                     <div class="brain-diagram">
                         <img src="brain.png" alt="Brain Diagram" id="brain-image">
-
-                        <div class="part-label" id="frontal-lobe" onmouseover="showPartInfo('frontal-lobe')" onmouseout="hidePartInfo()">Frontal Lobe</div>
-                        <div class="part-label" id="occipital-lobe" onmouseover="showPartInfo('occipital-lobe')" onmouseout="hidePartInfo()">Occipital Lobe</div>
-                        <div class="part-label" id="cerebellum" onmouseover="showPartInfo('cerebellum')" onmouseout="hidePartInfo()">Cerebellum</div>
-                        <div class="part-label" id="brainstem" onmouseover="showPartInfo('brainstem')" onmouseout="hidePartInfo()">Brainstem</div>
+                        
+                        <div class="part-label" id="frontal-lobe" onmouseover="showPartInfo('frontal-lobe')" ontouchstart="showPartInfo('frontal-lobe')" onmouseout="hidePartInfo()">Frontal Lobe</div>
+                            
+                        <div class="part-label" id="occipital-lobe" onmouseover="showPartInfo('occipital-lobe')" ontouchstart="showPartInfo('occipital-lobe')" onmouseout="hidePartInfo()">Occipital Lobe</div>
+                            
+                        <div class="part-label" id="cerebellum" onmouseover="showPartInfo('cerebellum')" ontouchstart="showPartInfo('cerebellum')" onmouseout="hidePartInfo()">Cerebellum</div>
+                            
+                        <div class="part-label" id="brainstem" onmouseover="showPartInfo('brainstem')" ontouchstart="showPartInfo('brainstem')" onmouseout="hidePartInfo()">Brainstem</div>
                     </div>
                     <div id="part-info" class="part-info"></div>
                 </div>
