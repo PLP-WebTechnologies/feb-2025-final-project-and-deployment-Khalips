@@ -24,15 +24,25 @@
                         <img src="idea.png" alt="Fun Fact" class="fun-fact-icon">
                         <p>Fun Fact: Your brain has about 100 billion neurons - that's more than all the stars in the Milky Way galaxy!</p>
                     </div>
+                    <div class="fun-fact">
+                        <img src="idea.png" alt="Fun Fact" class="fun-fact-icon">
+                        <p>Fun Fact: Your brain generates enough electricity to power a small lightbulb (about 20 watts)!</p>
+                    </div>
+                    <div class="fun-fact">
+                        <img src="idea.png" alt="Fun Fact" class="fun-fact-icon">
+                        <p>Fun Fact: Your brain can store up to 2.5 petabytes of memory - that's like 3 million hours of TV shows!</p>
+                    </div>
                 </div>
                 
                 <div class="interactive-section">
                     <h3>Hover over the brain parts to learn more:</h3>
                     <div class="brain-diagram">
-                        <img src="images/brain-diagram.png" alt="Brain Diagram" id="brain-image">
-                        <div class="brain-part cerebrum" onmouseover="showPartInfo('cerebrum')" onmouseout="hidePartInfo()"></div>
-                        <div class="brain-part cerebellum" onmouseover="showPartInfo('cerebellum')" onmouseout="hidePartInfo()"></div>
-                        <div class="brain-part brainstem" onmouseover="showPartInfo('brainstem')" onmouseout="hidePartInfo()"></div>
+                        <img src="brain.png" alt="Brain Diagram" id="brain-image">
+
+                        <div class="part-label" id="frontal-lobe" onmouseover="showPartInfo('frontal-lobe')" onmouseout="hidePartInfo()">Frontal Lobe</div>
+                        <div class="part-label" id="occipital-lobe" onmouseover="showPartInfo('occipital-lobe')" onmouseout="hidePartInfo()">Occipital Lobe</div>
+                        <div class="part-label" id="cerebellum" onmouseover="showPartInfo('cerebellum')" onmouseout="hidePartInfo()">Cerebellum</div>
+                        <div class="part-label" id="brainstem" onmouseover="showPartInfo('brainstem')" onmouseout="hidePartInfo()">Brainstem</div>
                     </div>
                     <div id="part-info" class="part-info"></div>
                 </div>

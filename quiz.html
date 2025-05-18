@@ -16,20 +16,17 @@
         
         <main>
             <section class="quiz-container">
-                <h2>How much do you know about the human body?</h2>
-                <p>Answer these 5 questions to find out!</p>
+                <h2>BioBuddy Body Quiz</h2>
+                <p id="progress">Question 1 of 5</p>
                 
                 <div id="quiz">
                     <!-- Questions will be inserted here by JavaScript -->
                 </div>
                 
-                <button id="submit-btn">Check Answers</button>
-                <button id="try-again-btn" style="display:none;">Try Again</button>
-                
-                <div id="results" style="display:none;">
-                    <h3>Your Results:</h3>
-                    <p id="score-message"></p>
-                    <p id="result-message"></p>
+                <div id="navigation" class="quiz-navigation">
+                    <button id="prev-btn" disabled>← Previous</button>
+                    <button id="next-btn" disabled>Next →</button>
+                    <button id="submit-btn" style="display:none;">Submit Answers</button>
                 </div>
             </section>
         </main>

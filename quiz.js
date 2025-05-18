@@ -1,8 +1,9 @@
+// quiz.js
 const quizQuestions = [
     {
         question: "What is the largest part of the brain?",
         options: ["Cerebellum", "Brainstem", "Cerebrum", "Neuron"],
-        answer: 2
+        answer: 2 // Index of correct answer (0-based)
     },
     {
         question: "How many chambers does the heart have?",
@@ -28,44 +29,68 @@ const quizQuestions = [
 
 let currentQuestion = 0;
 let score = 0;
-let userAnswers = [];
+let userAnswers = Array(quizQuestions.length).fill(null);
 
 function loadQuestion() {
     const quizDiv = document.getElementById('quiz');
     const question = quizQuestions[currentQuestion];
     
-    let optionsHtml = '';
-    question.options.forEach((option, index) => {
-        optionsHtml += `
-            <div class="option" onclick="selectOption(${index})">
-                ${option}
-            </div>
-        `;
-    });
+    // Update progress indicator
+    document.getElementById('progress').textContent = 
+        `Question ${currentQuestion + 1} of ${quizQuestions.length}`;
+    
+    let optionsHtml = question.options.map((option, index) => `
+        <div class="option" data-index="${index}">
+            ${option}
+        </div>
+    `).join('');
     
     quizDiv.innerHTML = `
         <div class="question">
-            <h3>Question ${currentQuestion + 1}: ${question.question}</h3>
+            <h3>${question.question}</h3>
             <div class="options">
                 ${optionsHtml}
             </div>
         </div>
     `;
+    
+    // Highlight previously selected answer if exists
+    if (userAnswers[currentQuestion] !== null) {
+        const options = document.querySelectorAll('.option');
+        options[userAnswers[currentQuestion]].classList.add('selected');
+    }
+    
+    // Add click event listeners to options
+    document.querySelectorAll('.option').forEach(option => {
+        option.addEventListener('click', function() {
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            this.classList.add('selected');
+            userAnswers[currentQuestion] = parseInt(this.getAttribute('data-index'));
+            
+            // Enable next button
+            document.getElementById('next-btn').disabled = false;
+        });
+    });
+    
+    // Update button states
+    document.getElementById('prev-btn').disabled = currentQuestion === 0;
+    document.getElementById('next-btn').disabled = userAnswers[currentQuestion] === null;
+    document.getElementById('submit-btn').style.display = 
+        currentQuestion === quizQuestions.length - 1 ? 'block' : 'none';
 }
 
-function selectOption(index) {
-    // Remove selected class from all options
-    const options = document.querySelectorAll('.option');
-    options.forEach(option => option.classList.remove('selected'));
-    
-    // Add selected class to clicked option
-    options[index].classList.add('selected');
-    
-    // Store user's answer
-    userAnswers[currentQuestion] = index;
+function navigateQuestions(direction) {
+    if (direction === 'next' && currentQuestion < quizQuestions.length - 1) {
+        currentQuestion++;
+    } else if (direction === 'prev' && currentQuestion > 0) {
+        currentQuestion--;
+    }
+    loadQuestion();
 }
 
-function checkAnswers() {
+function showResults() {
     // Calculate score
     score = 0;
     quizQuestions.forEach((question, index) => {
@@ -75,43 +100,37 @@ function checkAnswers() {
     });
     
     // Display results
-    const resultsDiv = document.getElementById('results');
-    const scoreMessage = document.getElementById('score-message');
-    const resultMessage = document.getElementById('result-message');
+    document.getElementById('quiz').innerHTML = `
+        <div class="results">
+            <h2>Quiz Completed!</h2>
+            <p id="score-message">You got ${score} out of ${quizQuestions.length} correct!</p>
+            <p id="result-message">
+                ${score === quizQuestions.length ? "Perfect! You're a Body Genius! " :
+                 score >= quizQuestions.length * 0.7 ? "Great job! " :
+                 score >= quizQuestions.length * 0.4 ? "Good try! " :
+                 "Keep learning! "}
+            </p>
+            <button id="try-again-btn">Try Again</button>
+        </div>
+    `;
     
-    scoreMessage.textContent = `You got ${score} out of ${quizQuestions.length} correct!`;
-    
-    if (score === quizQuestions.length) {
-        resultMessage.textContent = "You're a Body Genius! 🌟";
-    } else if (score >= quizQuestions.length * 0.7) {
-        resultMessage.textContent = "Great job! You know a lot about the body! 👍";
-    } else if (score >= quizQuestions.length * 0.4) {
-        resultMessage.textContent = "Good try! Keep learning! 😊";
-    } else {
-        resultMessage.textContent = "Nice try! Explore BioBuddy more and try again! 🌱";
-    }
-    
-    resultsDiv.style.display = 'block';
-    document.getElementById('submit-btn').style.display = 'none';
-    document.getElementById('try-again-btn').style.display = 'block';
+    document.getElementById('try-again-btn').addEventListener('click', () => {
+        currentQuestion = 0;
+        score = 0;
+        userAnswers = Array(quizQuestions.length).fill(null);
+        loadQuestion();
+        document.getElementById('navigation').style.display = 'flex';
+    });
 }
 
-function tryAgain() {
-    currentQuestion = 0;
-    score = 0;
-    userAnswers = [];
-    
-    document.getElementById('results').style.display = 'none';
-    document.getElementById('submit-btn').style.display = 'block';
-    document.getElementById('try-again-btn').style.display = 'none';
-    
-    loadQuestion();
-}
-
-// Initialize quiz
+// Initialize the quiz
 document.addEventListener('DOMContentLoaded', () => {
     loadQuestion();
     
-    document.getElementById('submit-btn').addEventListener('click', checkAnswers);
-    document.getElementById('try-again-btn').addEventListener('click', tryAgain);
+    document.getElementById('prev-btn').addEventListener('click', () => navigateQuestions('prev'));
+    document.getElementById('next-btn').addEventListener('click', () => navigateQuestions('next'));
+    document.getElementById('submit-btn').addEventListener('click', () => {
+        document.getElementById('navigation').style.display = 'none';
+        showResults();
+    });
 });
