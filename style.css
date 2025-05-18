@@ -248,14 +248,14 @@ footer {
 }
 
 #cerebellum {
-    bottom: 25%;
-    right: 10%;
+    bottom: 27%;
+    right: 5%;
     background-color: #B5EAD7;
 }
 
 #brainstem {
-    bottom: 15%;
-    left: 45%;
+    bottom: 25%;
+    right: 50%;
     background-color: #C7CEEA;
 }
 
