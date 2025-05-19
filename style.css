@@ -374,27 +374,7 @@ footer {
 }
 
 .skeleton-diagram img {
-    max-width: 300px;
-}
-
-.muscle-facts {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.fact-card {
-    background-color: #BBDEFB;
-    padding: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.fact-card:hover {
-    transform: translateY(-5px);
-    background-color: #90CAF9;
+    max-width: 400px;
 }
 
 /*Styling the quiz page*/
