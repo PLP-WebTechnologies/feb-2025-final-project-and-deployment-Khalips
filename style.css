@@ -22,6 +22,7 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/*Styling the Home Button on the top navigation tab*/
 .home-btn {
     display: inline-block;
     margin-top: 1rem;
@@ -43,6 +44,7 @@ main {
     margin: 0 auto;
 }
 
+/*Styling the copyright and more info section*/
 footer {
     background-color: #2E7D32;
     color: white;
@@ -129,6 +131,7 @@ footer {
     color: white;
 }
 
+/*Styling the home page of the site*/
 .mascot {
     max-width: 200px;
     margin: 1rem auto;
@@ -186,7 +189,7 @@ footer {
 
 .text-section, .interactive-section {
     background-color: white;
-    padding: 1.5rem;
+    padding: 1.2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -205,13 +208,13 @@ footer {
     margin-right: 10px;
 }
 
-/* Brain Diagram Container */
+/*Styling the brain page*/
 .brain-diagram {
     position: relative;
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
-    aspect-ratio: 1/1; /* Maintain square ratio */
+    aspect-ratio: 1/1; 
 }
 
 .brain-diagram img {
@@ -301,13 +304,25 @@ footer {
     }
 }
 
+/*Styling the heart page*/
+#beat-btn {
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    color: black;
+    background-color: rgb(255, 114, 161);
+}
+
 #beat-btn:hover {
-    background-color: #D32F2F;
+    cursor: pointer;
+    background-color: #df029d;
 }
 
 .heart-animation {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     margin: 0 auto;
     position: relative;
 }
@@ -350,8 +365,9 @@ footer {
 .left-atrium { background-color: #EF9A9A; }
 .left-ventricle { background-color: #E57373; }
 .right-atrium { background-color: #EF5350; }
-.right-ventricle { background-color: #F44336; color: white; }
+.right-ventricle { background-color: #F44336; }
 
+/*Styling the skeleton and muscles page*/
 .skeleton-diagram {
     text-align: center;
     margin: 1rem 0;
@@ -381,6 +397,7 @@ footer {
     background-color: #90CAF9;
 }
 
+/*Styling the quiz page*/
 .quiz-container {
     max-width: 600px;
     margin: 0 auto;
@@ -418,7 +435,7 @@ footer {
 .option.selected {
     background-color: #2196F3;
     color: white;
-    transform: scale(1.02);
+    transform: scale(1);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
@@ -426,13 +443,12 @@ footer {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 1rem;
     display: block;
-    width: 100%;
     transition: background-color 0.3s;
 }
 
@@ -472,7 +488,7 @@ footer {
 }
 
 .quiz-navigation button {
-    padding: 0.8rem 1.5rem;
+    padding: 0.4rem 0.6rem;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
@@ -486,6 +502,7 @@ footer {
 }
 
 #prev-btn:disabled, #next-btn:disabled {
+    padding: 0.5rem 0.8rem;
     background-color: #cccccc;
     cursor: not-allowed;
 }
@@ -493,7 +510,7 @@ footer {
 #submit-btn {
     background-color: #2196F3;
     color: white;
-    flex-grow: 1;
+    
 }
 
 .results {
