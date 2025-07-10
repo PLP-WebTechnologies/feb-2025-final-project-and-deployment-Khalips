@@ -135,7 +135,7 @@ function showStatus(message, type) {
     const status = document.getElementById('auth-status');
     status.textContent = message;
     status.className = `auth-status ${type}`;
-    status.style.fontSize = "0.55rem"; // Smaller font size for error messages
+    status.style.fontSize = "0.50rem"; // Smaller font size for error messages
     setTimeout(() => {
         status.textContent = '';
         status.className = 'auth-status';
