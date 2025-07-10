@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioMedBuddy | Sign In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="mascot.png">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-tabs">
+            <button class="tab-btn active" id="login-tab">Login</button>
+            <button class="tab-btn" id="signup-tab">Sign Up</button>
+        </div>
+
+        <!-- Login Form -->
+        <div class="auth-form" id="login-form">
+            <h2>Welcome!</h2>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="login-email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="login-password" placeholder="Password" required>
+            </div>
+            <button class="auth-btn" id="login-btn">Log In</button>
+            <p class="auth-link" id="forgot-password">Forgot password?</p>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div class="auth-form hidden" id="signup-form">
+            <h2>Create a BioMedBuddy Account</h2>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="signup-email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="signup-password" placeholder="Password (min 8 chars)" required minlength="8">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="signup-confirm" placeholder="Confirm Password" required>
+            </div>
+            <button class="auth-btn" id="signup-btn">Sign Up</button>
+        </div>
+
+        <!-- Password Reset Form -->
+        <div class="auth-form hidden" id="reset-form">
+            <h2>Reset Password</h2>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="reset-email" placeholder="Your Email" required>
+            </div>
+            <button class="auth-btn" id="reset-btn">Send Reset Link</button>
+            <p class="auth-link" id="back-to-login">Back to login</p>
+        </div>
+
+        <div class="auth-status" id="auth-status"></div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script>
+        // web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCfThuqTFYYnDM522-r7HJSj76Y7ChJI8g",
+            authDomain: "biomedbuddy-1c23e.firebaseapp.com",
+            projectId: "biomedbuddy-1c23e",
+            storageBucket: "biomedbuddy-1c23e.firebasestorage.app",
+            messagingSenderId: "26505442674",
+            appId: "1:26505442674:web:be5528cb2b06c3b71a99eb"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+    </script>
+    
+    <!-- authentication logic -->
+    <script src="auth.js"></script>
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="spinner hidden">
+        <div class="spinner-icon"></div>
+    </div>
+
+    <style>
+        .spinner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .spinner-icon {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #4CAF50;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .hidden { display: none; }
+    </style>
+
+    <script>
+        // Show spinner during auth checks
+        document.getElementById('login-btn').addEventListener('click', () => {
+            document.getElementById('loading-spinner').classList.remove('hidden');
+        });
+        // Repeat for signup-btn and reset-btn
+    </script>
+</body>
+</html>

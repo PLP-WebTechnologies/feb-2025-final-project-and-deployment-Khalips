@@ -4,15 +4,44 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BioMedBuddy: Learn the Body in a fun interactive way!</title>
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="style.css">
         <link rel="icon" type="image/png" href="mascot.png">
+        
+        <!-- Add Firebase SDK -->
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script>
+            // Your Firebase Config (same as in auth.html)
+            const firebaseConfig = {
+                apiKey: "AIzaSyCfThuqTFYYnDM522-r7HJSj76Y7ChJI8g",
+                authDomain: "biomedbuddy-1c23e.firebaseapp.com",
+                projectId: "biomedbuddy-1c23e",
+                storageBucket: "biomedbuddy-1c23e.firebasestorage.app",
+                messagingSenderId: "26505442674",
+                appId: "1:26505442674:web:be5528cb2b06c3b71a99eb"
+            };
+            
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
     </head>
     <body>
+        <script>
+            firebase.auth().onAuthStateChanged((user) => {
+                if (!user) {
+                    // Redirect to login with current page as return URL
+                    window.location.href = `auth.html?redirect=${encodeURIComponent(window.location.pathname)}`;
+                }
+            });
+        </script>
+
         <header>
             <h1>Welcome to BioMedBuddy!</h1>
             <img src="mascot.png" alt="BioBuddy Mascot" class="mascot">
+            <button id="logout-btn" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Log Out
+            </button>
         </header>
         
         <main>
@@ -82,6 +111,16 @@
             </div>
         </footer>
         
+        <script>
+            // Logout functionality
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                firebase.auth().signOut()
+                    .then(() => {
+                        window.location.href = "auth.html";
+                    });
+            });
+        </script>
+
         <script src="main.js"></script>
     </body>
 </html>
